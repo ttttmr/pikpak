@@ -3,7 +3,6 @@ import App from './App.vue'
 import router from './router'
 import http from './utils/axios'
 import elementResizeDetectorMaker from 'element-resize-detector'
-import cnzzAnalytics from 'vue-cnzz-analytics'
 
 const app = createApp(App)
 app.directive('resize', {
@@ -27,10 +26,4 @@ app.directive('resize', {
 })
 app.config.globalProperties.$http = http
 app.use(router)
-app.use(cnzzAnalytics, {
-  router: router,
-  siteIdList: [
-    1280510106,
-  ],
-});
 app.mount('#app')
